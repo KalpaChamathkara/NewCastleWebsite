@@ -159,7 +159,7 @@ textarea {
 /* ===== NAVBAR ===== */
 /*
   Mobile  (< 640px)  : uses 'mobile version.png' – portrait-friendly wave.
-  Tablet+ (≥ 640px)  : uses 'header-wave.png'   – wide landscape wave.
+  Tablet+ (≥ 640px)  : uses 'website.png'   – wide landscape wave.
   Desktop (≥ 1024px) : locked to 100% × 100% for pixel-perfect fit.
 
   Bottom padding is viewport-width-relative so it always matches
@@ -184,7 +184,7 @@ textarea {
 @media (min-width: 640px) {
   .navbar {
     padding: 0.9rem 0 13vw;
-    background-image: url('public/images/header-wave.png');
+    background-image: url('public/images/website.png');
   }
 }
 
