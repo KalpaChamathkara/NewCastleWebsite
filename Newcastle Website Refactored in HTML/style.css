@@ -157,23 +157,63 @@ textarea {
 }
 
 /* ===== NAVBAR ===== */
+/*
+  Mobile  (< 640px)  : uses 'mobile version.png' – portrait-friendly wave.
+  Tablet+ (≥ 640px)  : uses 'header-wave.png'   – wide landscape wave.
+  Desktop (≥ 1024px) : locked to 100% × 100% for pixel-perfect fit.
+
+  Bottom padding is viewport-width-relative so it always matches
+  the rendered wave-tail height regardless of screen width.
+*/
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 1.25rem 0 6.5rem;
-  background: url('public/images/header-wave.png') no-repeat bottom center;
-  background-size: 100% 100%;
+  transition: padding 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Mobile wave image – tune bottom padding to match its tail height */
+  padding: 0.6rem 0 18vw;
+  background: url('public/images/mobile version.png') no-repeat bottom center;
+  background-size: 100% auto;
   color: white;
 }
 
+/* Tablet – switch to the wide landscape wave */
+@media (min-width: 640px) {
+  .navbar {
+    padding: 0.9rem 0 13vw;
+    background-image: url('public/images/header-wave.png');
+  }
+}
+
+/* Desktop – lock to 100% 100% so it fills the fixed height perfectly */
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 1.25rem 0 6.5rem;
+    background-size: 100% 100%;
+  }
+}
+
+/* --- Scrolled state --- */
 .navbar.scrolled {
-  padding: 0.75rem 0 4.5rem;
-  background-size: 100% 100%;
+  padding: 0.4rem 0 11vw;
+  background-size: 100% auto;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 640px) {
+  .navbar.scrolled {
+    padding: 0.5rem 0 10vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar.scrolled {
+    padding: 0.75rem 0 4.5rem;
+    background-size: 100% 100%;
+  }
 }
 
 .navbar .nav-inner {
@@ -182,17 +222,19 @@ textarea {
   align-items: center;
 }
 
+/* --- Logo --- */
 .navbar .logo img {
-  height: 5.5rem;
+  /* Responsive logo size: small on phones, bigger on desktop */
+  height: clamp(2.5rem, 8vw, 5.5rem);
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  /* Make logo white to stand out on blue */
-  transition: height 0.3s;
+  /* Gold tint – approximates #cfaa69 via CSS filter */
+  filter: brightness(0) saturate(100%) invert(72%) sepia(40%) saturate(500%) hue-rotate(5deg) brightness(100%);
+  transition: height 0.3s ease;
 }
 
 .navbar.scrolled .logo img {
-  height: 3rem;
+  height: clamp(2rem, 6vw, 3rem);
 }
 
 .nav-links {
