@@ -186,8 +186,9 @@ textarea {
 }
 
 .logo img {
-  height: clamp(3.5rem, 8vw, 5.5rem);
+  height: clamp(4rem, 8vw, 5.5rem);
   width: auto;
+
   transition: height 0.35s ease;
 }
 
@@ -488,6 +489,12 @@ textarea {
   width: 100%;
 }
 
+@media (min-width: 1024px) {
+  .hero-content {
+    padding-top: 13rem;
+  }
+}
+
 .hero-tag {
   display: inline-flex;
   align-items: center;
@@ -507,6 +514,7 @@ textarea {
   border-radius: 50%;
   background: var(--gold);
   animation: pulse 2s infinite;
+
 }
 
 @keyframes pulse {
