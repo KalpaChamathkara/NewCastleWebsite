@@ -4,161 +4,171 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Newcastle Holdings - Shaping Spaces. Elevating Lifestyles. Creating Value</title>
+  <title>Newcastle Holdings — Shaping Spaces. Elevating Lifestyles. Creating Value</title>
   <meta name="description"
     content="Newcastle Holdings is a diversified business group delivering excellence across real estate, leisure, interior design, and digital solutions." />
-  <link rel="icon" href="favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&family=Tenor+Sans&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-
 </head>
 
 <body>
 
-  <!-- ===== NAVBAR ===== -->
+  <!-- NAVBAR -->
   <header class="navbar" id="navbar">
-    <div class="container nav-inner">
+    <div class="nav-inner">
       <a href="#home" class="logo">
-        <img src="public/images/logo.png" alt="Newcastle Holdings Logo" />
+        <img src="public/images/logo.png" alt="Newcastle Holdings" />
       </a>
       <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#why-us">Why Us</a>
-        <a href="#sectors">Sectors</a>
-        <a href="#csr">CSR</a>
-        <a href="#contact">Contact</a>
+        <a href="#home"><span class="nav-num"></span>Home</a>
+        <a href="#about"><span class="nav-num"></span>About</a>
+        <a href="#why-us"><span class="nav-num"></span>Why Us</a>
+        <a href="#sectors"><span class="nav-num"></span>Sectors</a>
+        <a href="#csr"><span class="nav-num"></span>CSR</a>
+        <a href="#contact"><span class="nav-num"></span>Contact</a>
       </nav>
       <button class="mobile-toggle" id="menuToggle" aria-label="Toggle navigation">
-        <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="4" x2="20" y1="12" y2="12" />
-          <line x1="4" x2="20" y1="6" y2="6" />
-          <line x1="4" x2="20" y1="18" y2="18" />
-        </svg>
-        <svg id="closeIcon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path d="M18 6 6 18" />
-          <path d="m6 6 12 12" />
-        </svg>
+        <span></span><span></span><span></span>
       </button>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#home">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#why-us">Why Us</a>
-      <a href="#sectors">Sectors</a>
-      <a href="#csr">CSR</a>
-      <a href="#contact">Contact</a>
+      <a href="#home" class="mm-link"><span class="nav-num">01</span>Home</a>
+      <a href="#about" class="mm-link"><span class="nav-num">02</span>About</a>
+      <a href="#why-us" class="mm-link"><span class="nav-num">03</span>Why Us</a>
+      <a href="#sectors" class="mm-link"><span class="nav-num">04</span>Sectors</a>
+      <a href="#csr" class="mm-link"><span class="nav-num">05</span>CSR</a>
+      <a href="#contact" class="mm-link"><span class="nav-num">06</span>Contact</a>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
+  <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-bg">
-      <div class="hero-slide active" style="background-image: url('public/images/hero1.png')"></div>
-      <div class="hero-slide" style="background-image: url('public/images/hero3.png')"></div>
-      <div class="hero-slide" style="background-image: url('public/images/hero4.png')"></div>
-      <div class="hero-slide" style="background-image: url('public/images/hero2.png')"></div>
+      <div class="hero-slide active" style="background-image:url('public/images/hero1.png')"></div>
+      <div class="hero-slide" style="background-image:url('public/images/hero3.png')"></div>
+      <div class="hero-slide" style="background-image:url('public/images/hero4.png')"></div>
+      <div class="hero-slide" style="background-image:url('public/images/hero2.png')"></div>
     </div>
-    <div class="hero-overlay-1"></div>
-    <div class="hero-overlay-2"></div>
+    <div class="hero-vignette"></div>
+    <div class="hero-grid-overlay"></div>
+    <div class="scanlines"></div>
+
+    <!-- HUD elements -->
+
+    <div class="hud-corner hud-bl">
+      <div class="hud-bracket"></div>
+      <span class="hud-label mono">LK // GLOBAL</span>
+    </div>
+    <div class="hud-corner hud-br">
+      <span class="hud-label mono" id="heroTime">00:00:00</span>
+      <div class="hud-bracket"></div>
+    </div>
+
     <div class="hero-content">
-      <div class="container">
-        <div class="inner">
-          <h1>
-            Shaping Spaces <br />
-            <span class="accent">Elevating Lifestyles</span> <br />
-            Creating Value
-          </h1>
-          <p class="subtitle">
-            Newcastle Holdings is a diversified business group delivering excellence across real estate, leisure,
-            interior design, and digital solutions.
-          </p>
-          <div class="hero-buttons">
-            <a href="#sectors" class="btn-primary">
-              Explore Our Sectors
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </a>
-            <a href="#contact" class="btn-outline">Get in Touch</a>
-          </div>
-          <div class="hero-indicators">
-            <button class="active" data-slide="0" aria-label="Go to slide 1"></button>
-            <button data-slide="1" aria-label="Go to slide 2"></button>
-            <button data-slide="2" aria-label="Go to slide 3"></button>
-            <button data-slide="3" aria-label="Go to slide 4"></button>
-          </div>
-        </div>
+      <div class="hero-tag mono">
+        <span class="tag-dot"></span>PREMIUM REAL ESTATE &amp; LIFESTYLE GROUP
+      </div>
+      <h1 class="hero-title">
+        <span class="line-wrap"><span class="hero-line" style="--d:0s">Shaping</span></span>
+        <span class="line-wrap"><span class="hero-line accent" style="--d:.15s">Spaces</span></span>
+        <span class="line-wrap"><span class="hero-line" style="--d:.3s">Elevating</span></span>
+        <span class="line-wrap"><span class="hero-line accent" style="--d:.45s">Lifestyles</span></span>
+      </h1>
+      <p class="hero-sub">
+        A diversified business group delivering excellence across real estate, leisure, interior design, and digital
+        solutions — built for tomorrow.
+      </p>
+      <div class="hero-cta">
+        <a href="#sectors" class="btn-primary">
+          <span>Explore Sectors</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+      <div class="hero-indicators">
+        <button class="ind active" data-slide="0"></button>
+        <button class="ind" data-slide="1"></button>
+        <button class="ind" data-slide="2"></button>
+        <button class="ind" data-slide="3"></button>
+      </div>
+    </div>
+
+    <!-- Stat strip -->
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num mono">04+</span>
+        <span class="stat-label">Business Sectors</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num mono">LK</span>
+        <span class="stat-label">Sri Lanka HQ</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num mono">AU</span>
+        <span class="stat-label">Global Network</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num mono">∞</span>
+        <span class="stat-label">Creating Value</span>
       </div>
     </div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
-  <section class="about section-padding" id="about">
+  <!-- ABOUT -->
+  <section class="about section-pad" id="about">
     <div class="container">
-      <div class="stagger-children" style="max-width: 56rem; margin: 0 auto;">
-        <div style="text-align: center; margin-bottom: 4rem;">
-          <h2 class="section-title">About <span class="accent">Us</span></h2>
-          <div class="section-divider"></div>
-          <p class="about-description">
-            Newcastle Holdings is a forward-thinking business group with a strong presence across multiple sectors
-            including real estate, leisure, interior solutions, and digital services. Built on a foundation of
-            integrity, innovation, and strategic execution, we aim to deliver high-quality offerings that meet evolving
-            market demands while creating lasting value for our clients and stakeholders.
-          </p>
+      <div class="section-header">
+        <div class="eyebrow mono"><span class="eyebrow-line"></span>ABOUT US<span class="eyebrow-line"></span></div>
+        <h2 class="section-title">Who We <em>Are</em></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="lead-text">Newcastle Holdings is a forward-thinking business group with a strong presence across
+            multiple sectors including real estate, leisure, interior solutions, and digital services.</p>
+          <p class="body-text">Built on a foundation of integrity, innovation, and strategic execution, we aim to
+            deliver high-quality offerings that meet evolving market demands while creating lasting value for our
+            clients and stakeholders.</p>
         </div>
-
-        <div class="about-cards">
-          <div class="about-card glass-card vision">
-            <h3>Our Vision</h3>
+        <div class="about-cards-col reveal" style="--delay:.2s">
+          <div class="vision-card">
+            <div class="vc-header">
+              <span class="mono vc-tag">// VISION</span>
+              <div class="vc-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </div>
+            </div>
             <p>To be a trusted and innovative leader in delivering integrated lifestyle, investment, and business
               solutions across Sri Lanka and beyond.</p>
           </div>
-
-          <div class="about-card glass-card">
-            <h3>Quality Policy</h3>
-            <p>At Newcastle Holdings, quality is at the core of everything we do. We are committed to:</p>
+          <div class="quality-card">
+            <div class="qc-header">
+              <span class="mono qc-tag">// QUALITY POLICY</span>
+            </div>
             <div class="quality-list">
-              <div class="quality-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                  <path d="m9 11 3 3L22 4" />
-                </svg>
-                <span>Delivering excellence in every project and service</span>
+              <div class="qi">
+                <div class="qi-dot"></div><span>Delivering excellence in every project and service</span>
               </div>
-              <div class="quality-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                  <path d="m9 11 3 3L22 4" />
-                </svg>
-                <span>Maintaining the highest standards of professionalism and integrity</span>
+              <div class="qi">
+                <div class="qi-dot"></div><span>Maintaining the highest standards of professionalism</span>
               </div>
-              <div class="quality-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                  <path d="m9 11 3 3L22 4" />
-                </svg>
-                <span>Continuously improving our processes and offerings</span>
+              <div class="qi">
+                <div class="qi-dot"></div><span>Continuously improving our processes and offerings</span>
               </div>
-              <div class="quality-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                  <path d="m9 11 3 3L22 4" />
-                </svg>
-                <span>Ensuring customer satisfaction through reliability and innovation</span>
+              <div class="qi">
+                <div class="qi-dot"></div><span>Ensuring customer satisfaction through innovation</span>
               </div>
             </div>
           </div>
@@ -167,19 +177,19 @@
     </div>
   </section>
 
-  <!-- ===== WHY US ===== -->
-  <section class="why-us section-padding" id="why-us">
+  <!-- WHY US -->
+  <section class="why-us section-pad" id="why-us">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 4rem;">
-        <h2 class="section-title fade-up">Why Choose <span class="accent">Us</span></h2>
-        <div class="section-divider fade-up"></div>
+      <div class="section-header">
+        <div class="eyebrow mono"><span class="eyebrow-line"></span>WHY CHOOSE US<span class="eyebrow-line"></span>
+        </div>
+        <h2 class="section-title">Why <em>Edge</em></h2>
       </div>
-
-      <div class="why-grid stagger-children">
-        <div class="why-card">
-          <div class="why-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="why-grid">
+        <div class="why-card reveal" style="--delay:0s">
+          <div class="wc-num mono">01</div>
+          <div class="wc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path
                 d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" />
               <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" />
@@ -187,13 +197,13 @@
             </svg>
           </div>
           <h3>Integrated Expertise</h3>
-          <p>Our strength lies in our ability to seamlessly integrate multiple business sectors, offering holistic
-            solutions under one umbrella.</p>
+          <p>Seamlessly integrating multiple business sectors, offering holistic solutions under one umbrella.</p>
+          <div class="wc-bar"></div>
         </div>
-        <div class="why-card">
-          <div class="why-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="why-card reveal" style="--delay:.1s">
+          <div class="wc-num mono">02</div>
+          <div class="wc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path
                 d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
               <path d="M9 18h6" />
@@ -201,26 +211,26 @@
             </svg>
           </div>
           <h3>Deep Market Knowledge</h3>
-          <p>With extensive industry experience, we possess strong insights into market trends, enabling us to make
-            informed and strategic decisions.</p>
+          <p>Extensive industry experience with strong insights into market trends for informed strategic decisions.</p>
+          <div class="wc-bar"></div>
         </div>
-        <div class="why-card">
-          <div class="why-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="why-card reveal" style="--delay:.2s">
+          <div class="wc-num mono">03</div>
+          <div class="wc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path
                 d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
               <path d="m9 12 2 2 4-4" />
             </svg>
           </div>
           <h3>Commitment to Quality</h3>
-          <p>We maintain uncompromising standards across all our ventures, ensuring superior outcomes and lasting value.
-          </p>
+          <p>Uncompromising standards across all our ventures, ensuring superior outcomes and lasting value.</p>
+          <div class="wc-bar"></div>
         </div>
-        <div class="why-card">
-          <div class="why-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="why-card reveal" style="--delay:.3s">
+          <div class="wc-num mono">04</div>
+          <div class="wc-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="m11 17 2 2a1 1 0 1 0 3-3" />
               <path
                 d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
@@ -230,312 +240,246 @@
             </svg>
           </div>
           <h3>Trusted Partnerships</h3>
-          <p>We collaborate with reputable local and international partners, strengthening our capabilities and
-            expanding opportunities.</p>
+          <p>Reputable local and international partners, strengthening capabilities and expanding opportunities.</p>
+          <div class="wc-bar"></div>
         </div>
       </div>
-
-      <div class="testimonial-box fade-up">
-        <div class="testimonial-inner glass-card">
-          <h3>Client Testimonials</h3>
-          <p>"Our clients are at the heart of everything we do. Explore real experiences and feedback through our Google
-            Reviews, reflecting our commitment to excellence and trust."</p>
+      <div class="testimonial-strip reveal">
+        <div class="ts-inner">
+          <span class="ts-quote mono">"</span>
+          <p>Our clients are at the heart of everything we do. Real experiences and feedback through our Google Reviews
+            reflect our commitment to excellence and trust.</p>
+          <span class="ts-quote mono">"</span>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SECTORS ===== -->
-  <section class="sectors section-padding" id="sectors">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 5rem;">
-        <h2 class="section-title fade-up">Business <span class="accent">Sectors</span></h2>
-        <div class="section-divider fade-up"></div>
-      </div>
-
-      <div class="sectors-list">
-
-        <!-- Real Estate -->
-        <div class="sector-row">
-          <div class="sector-image-wrap fade-left">
-            <div class="sector-image-frame">
-              <div class="sector-image-overlay"></div>
-              <img src="public/images/hero3.png" alt="Real Estate" />
-              <div class="sector-image-border"></div>
-            </div>
-          </div>
-          <div class="sector-content-wrap fade-right">
-            <div class="sector-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
-                <path d="M9 22v-4h6v4" />
-                <path d="M8 6h.01" />
-                <path d="M16 6h.01" />
-                <path d="M12 6h.01" />
-                <path d="M12 10h.01" />
-                <path d="M12 14h.01" />
-                <path d="M16 10h.01" />
-                <path d="M16 14h.01" />
-                <path d="M8 10h.01" />
-                <path d="M8 14h.01" />
-              </svg>
-            </div>
-            <h3>Real Estate</h3>
-            <div class="sector-body">
-              <h4>Newcastle Properties</h4>
-              <p>Specializes in premium real estate developments and investment opportunities across Colombo and
-                emerging urban locations. Our focus is on delivering high-quality residential and mixed-use developments
-                that combine modern design with long-term value.</p>
-              <h4>Newcastle Realty</h4>
-              <p>We collaborate with leading industry players such as: <br /><span class="highlight">Prime Lands, Home
-                  Lands</span></p>
-              <p class="italic">We also maintain strategic affiliations with Australian property licensed agents'
-                networks providing global exposure and investment opportunities.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Leisure -->
-        <div class="sector-row reverse">
-          <div class="sector-image-wrap fade-right">
-            <div class="sector-image-frame">
-              <div class="sector-image-overlay"></div>
-              <img src="public/images/leisure.png" alt="Leisure" />
-              <div class="sector-image-border"></div>
-            </div>
-          </div>
-          <div class="sector-content-wrap fade-left">
-            <div class="sector-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M13 8c0-2.76-2.46-5-5.5-5-1.58 0-3 .5-4 1.5-2 2-2 5 .5 7C5.58 13 7 14.5 7 17H4" />
-                <path
-                  d="M14 11.5c1.5-1.5 3-3 5-3 3 0 5.5 2.24 5.5 5 0 .75-.25 1.5-.5 2-1 2-3 3-5 3-1.5 0-2.5-.5-3.5-1.5" />
-                <path d="M20 21c-2-1-4-3.5-4-6" />
-                <path d="M18.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
-              </svg>
-            </div>
-            <h3>Leisure</h3>
-            <div class="sector-body">
-              <h4>Newcastle Leisure</h4>
-              <p>Our leisure sector is designed to enhance lifestyle experiences through thoughtfully curated services
-                and spaces.</p>
-              <h4>Apartments & Villa Management</h4>
-              <p><strong>"THE WHITE Collection"</strong><br />We offer premium property management solutions, ensuring
-                seamless operations, maintenance, and guest experiences for luxury apartments and villas.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Interior Solutions -->
-        <div class="sector-row">
-          <div class="sector-image-wrap fade-left">
-            <div class="sector-image-frame">
-              <div class="sector-image-overlay"></div>
-              <img src="public/images/interior.png" alt="Interior Solutions" />
-              <div class="sector-image-border"></div>
-            </div>
-          </div>
-          <div class="sector-content-wrap fade-right">
-            <div class="sector-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3" />
-                <path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z" />
-                <path d="M4 18v2" />
-                <path d="M20 18v2" />
-                <path d="M12 4v9" />
-              </svg>
-            </div>
-            <h3>Interior Solutions</h3>
-            <div class="sector-body">
-              <p>We provide bespoke interior design solutions tailored for modern living.</p>
-              <ul>
-                <li>Apartments</li>
-                <li>Villas</li>
-              </ul>
-              <p class="italic">Our approach combines functionality, aesthetics, and innovation to create spaces that
-                reflect individual lifestyles while maximizing comfort and value.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pro-Smart Digital -->
-        <div class="sector-row reverse">
-          <div class="sector-image-wrap fade-right">
-            <div class="sector-image-frame">
-              <div class="sector-image-overlay"></div>
-              <img src="public/images/digital.png" alt="Pro-Smart Digital" />
-              <div class="sector-image-border"></div>
-            </div>
-          </div>
-          <div class="sector-content-wrap fade-left">
-            <div class="sector-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="16" height="16" x="4" y="4" rx="2" />
-                <rect width="6" height="6" x="9" y="9" rx="1" />
-                <path d="M15 2v2" />
-                <path d="M15 20v2" />
-                <path d="M2 15h2" />
-                <path d="M2 9h2" />
-                <path d="M20 15h2" />
-                <path d="M20 9h2" />
-                <path d="M9 2v2" />
-                <path d="M9 20v2" />
-              </svg>
-            </div>
-            <h3>Pro-Smart Digital</h3>
-            <div class="sector-body">
-              <p>ProSmart Digital delivers innovative digital and marketing solutions to help businesses grow in an
-                increasingly competitive landscape.</p>
-              <h4 class="sub">Our services focus on:</h4>
-              <ul>
-                <li>Digital marketing strategy</li>
-                <li>Brand development</li>
-                <li>Creative design solutions</li>
-                <li>Performance-driven campaigns</li>
-              </ul>
-              <p class="italic">We blend creativity with data-driven insights to deliver measurable results.</p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ===== CSR ===== -->
-  <section class="csr section-padding" id="csr">
+  <!-- SECTORS -->
+  <section class="sectors section-pad" id="sectors">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 1rem;">
-        <h2 class="section-title fade-up">Corporate Social <span class="accent">Responsibility</span></h2>
+      <div class="section-header">
+        <div class="eyebrow mono"><span class="eyebrow-line"></span>BUSINESS SECTORS<span class="eyebrow-line"></span>
+        </div>
+        <h2 class="section-title">Our <em>Verticals</em></h2>
       </div>
-      <p class="csr-intro fade-up">
-        We believe in building not just businesses, but communities. Our CSR initiatives focus on education,
-        empowerment, and social well-being, contributing positively to society while fostering sustainable growth.
-      </p>
 
-      <div class="csr-grid stagger-children">
-        <div class="csr-card">
-          <div class="csr-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Real Estate -->
+      <div class="sector-block reveal">
+        <div class="sector-media">
+          <div class="sector-img-wrap">
+            <img src="public/images/hero3.png" alt="Real Estate" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-tag-img mono">REAL ESTATE</div>
+          </div>
+        </div>
+        <div class="sector-copy">
+          <div class="sector-num mono">// 01</div>
+          <h3 class="sector-title">Real Estate</h3>
+          <div class="sector-divider"></div>
+          <div class="sector-detail">
+            <h4>Newcastle Properties</h4>
+            <p>Premium real estate developments and investment opportunities across Colombo and emerging urban locations
+              — high-quality residential and mixed-use developments combining modern design with long-term value.</p>
+          </div>
+          <div class="sector-detail">
+            <h4>Newcastle Realty</h4>
+            <p>Strategic partnerships with <strong>Prime Lands</strong> and <strong>Home Lands</strong>, plus
+              affiliations with Australian property licensed agent networks providing global exposure and investment
+              opportunities.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leisure -->
+      <div class="sector-block reverse reveal">
+        <div class="sector-media">
+          <div class="sector-img-wrap">
+            <img src="public/images/leisure.png" alt="Leisure" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-tag-img mono">LEISURE</div>
+          </div>
+        </div>
+        <div class="sector-copy">
+          <div class="sector-num mono">// 02</div>
+          <h3 class="sector-title">Leisure</h3>
+          <div class="sector-divider"></div>
+          <div class="sector-detail">
+            <h4>Newcastle Leisure</h4>
+            <p>Thoughtfully curated services and spaces designed to enhance lifestyle experiences at every touchpoint.
+            </p>
+          </div>
+          <div class="sector-detail">
+            <h4>"The White Collection"</h4>
+            <p>Premium property management solutions ensuring seamless operations, maintenance, and guest experiences
+              for luxury apartments and villas.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interior Solutions -->
+      <div class="sector-block reveal">
+        <div class="sector-media">
+          <div class="sector-img-wrap">
+            <img src="public/images/interior.png" alt="Interior Solutions" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-tag-img mono">INTERIOR</div>
+          </div>
+        </div>
+        <div class="sector-copy">
+          <div class="sector-num mono">// 03</div>
+          <h3 class="sector-title">Interior Solutions</h3>
+          <div class="sector-divider"></div>
+          <div class="sector-detail">
+            <p>Bespoke interior design solutions tailored for modern living — apartments and villas. Our approach
+              combines functionality, aesthetics, and innovation to create spaces reflecting individual lifestyles while
+              maximizing comfort and value.</p>
+          </div>
+          <div class="sector-chips">
+            <span class="chip">Apartments</span>
+            <span class="chip">Villas</span>
+            <span class="chip">Custom Spaces</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pro-Smart Digital -->
+      <div class="sector-block reverse reveal">
+        <div class="sector-media">
+          <div class="sector-img-wrap">
+            <img src="public/images/digital.png" alt="Pro-Smart Digital" />
+            <div class="sector-img-overlay"></div>
+            <div class="sector-tag-img mono">DIGITAL</div>
+          </div>
+        </div>
+        <div class="sector-copy">
+          <div class="sector-num mono">// 04</div>
+          <h3 class="sector-title">Pro-Smart Digital</h3>
+          <div class="sector-divider"></div>
+          <div class="sector-detail">
+            <p>Innovative digital and marketing solutions helping businesses grow in an increasingly competitive
+              landscape — blending creativity with data-driven insights to deliver measurable results.</p>
+          </div>
+          <div class="sector-chips">
+            <span class="chip">Digital Marketing</span>
+            <span class="chip">Brand Development</span>
+            <span class="chip">Creative Design</span>
+            <span class="chip">Performance Campaigns</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CSR -->
+  <section class="csr section-pad" id="csr">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow mono"><span class="eyebrow-line"></span>SOCIAL RESPONSIBILITY<span
+            class="eyebrow-line"></span></div>
+        <h2 class="section-title">Beyond <em>Business</em></h2>
+      </div>
+      <p class="csr-intro reveal">We believe in building not just businesses, but communities. Our CSR initiatives focus
+        on education, empowerment, and social well-being — contributing positively to society while fostering
+        sustainable growth.</p>
+      <div class="csr-grid">
+        <div class="csr-card reveal" style="--delay:0s">
+          <div class="csr-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path
                 d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
             </svg>
           </div>
-          <h3>Sponsorship of SOS Children's Villages</h3>
-          <p>Supporting children in need with care, education, and a better future.</p>
+          <div class="csr-content">
+            <span class="csr-num mono">01</span>
+            <h3>SOS Children's Villages</h3>
+            <p>Supporting children in need with care, education, and a brighter future through sustained sponsorship.
+            </p>
+          </div>
         </div>
-        <div class="csr-card">
-          <div class="csr-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="csr-card reveal" style="--delay:.15s">
+          <div class="csr-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path
                 d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
               <path d="M22 10v6" />
               <path d="M6 12.5V16c0 1 2.5 3 6 3s6-2 6-3v-3.5" />
             </svg>
           </div>
-          <h3>Education Scholarships</h3>
-          <p>Providing financial assistance to deserving students to pursue their academic goals.</p>
+          <div class="csr-content">
+            <span class="csr-num mono">02</span>
+            <h3>Education Scholarships</h3>
+            <p>Providing financial assistance to deserving students to pursue their academic goals and ambitions.</p>
+          </div>
         </div>
-        <div class="csr-card">
-          <div class="csr-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="csr-card reveal" style="--delay:.3s">
+          <div class="csr-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <circle cx="8" cy="8" r="6" />
               <path d="M18.09 10.37A6 6 0 1 1 10.34 18" />
               <path d="M7 6h1v4" />
               <path d="m16.71 13.88.7.71-2.82 2.82" />
             </svg>
           </div>
-          <h3>Financial Literacy Development</h3>
-          <p>Empowering school communities with essential financial knowledge and skills for a sustainable future.</p>
+          <div class="csr-content">
+            <span class="csr-num mono">03</span>
+            <h3>Financial Literacy</h3>
+            <p>Empowering school communities with essential financial knowledge and skills for a sustainable future.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
-  <section class="contact section-padding" id="contact">
+  <!-- CONTACT -->
+  <section class="contact section-pad" id="contact">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 1rem;">
-        <h2 class="section-title fade-up">Let's <span class="accent">Connect</span></h2>
-        <div class="section-divider fade-up"></div>
+      <div class="section-header">
+        <div class="eyebrow mono"><span class="eyebrow-line"></span>CONTACT<span class="eyebrow-line"></span></div>
+        <h2 class="section-title">Let's <em>Connect</em></h2>
       </div>
-      <p class="contact-intro fade-up">
-        Whether you are looking for investment opportunities, business collaborations, or tailored solutions, our team
-        is ready to assist you.
-      </p>
-
+      <p class="contact-intro reveal">Whether you are looking for investment opportunities, business collaborations, or
+        tailored solutions — our team is ready to assist you.</p>
       <div class="contact-grid">
-        <div class="contact-details fade-left">
-          <h3>Contact Details</h3>
-          <div class="contact-items">
-            <div class="contact-item">
-              <div class="contact-item-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-              </div>
-              <div>
-                <h4>Address</h4>
-                <p>The Newcastle Court, 601, 6th Floor,<br />Nawala Road, Rajagiriya 10107,<br />Sri Lanka</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-item-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-              </div>
-              <div>
-                <h4>Phone</h4>
-                <a href="tel:0764460560">0764 460 560</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-item-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect width="20" height="16" x="2" y="4" rx="2" />
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                </svg>
-              </div>
-              <div>
-                <h4>Email</h4>
-                <a href="mailto:sales@newcastleholdings.lk">sales@newcastleholdings.lk</a>
-              </div>
-            </div>
+        <div class="contact-info reveal">
+          <div class="info-block">
+            <span class="info-label mono">// LOCATION</span>
+            <p>The Newcastle Court, 601, 6th Floor,<br>Nawala Road, Rajagiriya 10107,<br>Sri Lanka</p>
+          </div>
+          <div class="info-block">
+            <span class="info-label mono">// PHONE</span>
+            <a href="tel:0764460560">0764 460 560</a>
+          </div>
+          <div class="info-block">
+            <span class="info-label mono">// EMAIL</span>
+            <a href="mailto:sales@newcastleholdings.lk">sales@newcastleholdings.lk</a>
+          </div>
+          <div class="contact-decor">
+            <div class="decor-line"></div>
+            <div class="decor-dot"></div>
+            <div class="decor-line"></div>
           </div>
         </div>
-
-        <div class="contact-form-wrap fade-right">
-          <h3>Send us a message</h3>
+        <div class="contact-form-wrap reveal" style="--delay:.2s">
           <form id="contactForm">
-            <div class="form-group">
-              <label>Name</label>
-              <input type="text" placeholder="Your full name" />
+            <div class="form-row">
+              <div class="form-field">
+                <label class="mono">// NAME</label>
+                <input type="text" placeholder="Your full name" />
+              </div>
+              <div class="form-field">
+                <label class="mono">// EMAIL</label>
+                <input type="email" placeholder="your@email.com" />
+              </div>
             </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" placeholder="your@email.com" />
-            </div>
-            <div class="form-group">
-              <label>Message</label>
-              <textarea rows="4" placeholder="How can we help you?"></textarea>
+            <div class="form-field">
+              <label class="mono">// MESSAGE</label>
+              <textarea rows="5" placeholder="How can we help you?"></textarea>
             </div>
             <button type="button" class="btn-send">
-              Send Message
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <span>Transmit Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="m22 2-7 20-4-9-9-4Z" />
                 <path d="M22 2 11 13" />
               </svg>
@@ -546,105 +490,110 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-top">
-        <div>
-          <a href="#home" class="footer-logo">
-            <img src="public/images/logo.png" alt="Newcastle Holdings Logo" />
-          </a>
-          <p class="footer-tagline">Shaping Spaces. Elevating Lifestyles. Creating Value.</p>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#home"><img src="public/images/logo.png" alt="Newcastle Holdings" class="footer-logo" /></a>
+          <p class="footer-tag mono">Shaping Spaces. Elevating Lifestyles. Creating Value.</p>
         </div>
-        <div class="footer-links">
-          <a href="#about">About Us</a>
+        <div class="footer-nav">
+          <a href="#about">About</a>
           <a href="#sectors">Sectors</a>
           <a href="#csr">CSR</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; <span id="currentYear"></span> Newcastle Holdings. All rights reserved.</p>
-        <p>Driven by innovation. Defined by quality. Trusted by clients.</p>
+      <div class="footer-bar">
+        <span class="mono">&copy; <span id="currentYear"></span> Newcastle Holdings. All rights reserved.</span>
+        <span class="mono footer-sub">Driven by innovation. Defined by quality.</span>
       </div>
     </div>
   </footer>
 
-  <!-- ===== JAVASCRIPT ===== -->
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
   <script>
-    // Dynamic year
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-    // ---- Navbar scroll effect ----
+    // Live clock
+    function updateClock() {
+      const el = document.getElementById('heroTime');
+      if (el) el.textContent = new Date().toLocaleTimeString('en-US', { hour12: false });
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // Navbar scroll
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // ---- Mobile menu ----
+    // Mobile menu
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
-    const menuIcon = document.getElementById('menuIcon');
-    const closeIcon = document.getElementById('closeIcon');
-
     menuToggle.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      menuIcon.style.display = isOpen ? 'none' : 'block';
-      closeIcon.style.display = isOpen ? 'block' : 'none';
+      const open = mobileMenu.classList.toggle('open');
+      menuToggle.classList.toggle('active', open);
     });
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuToggle.classList.remove('active');
+    }));
 
-    // Close mobile menu on link click
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        menuIcon.style.display = 'block';
-        closeIcon.style.display = 'none';
-      });
-    });
-
-    // ---- Hero carousel ----
+    // Hero carousel
     const slides = document.querySelectorAll('.hero-slide');
-    const indicators = document.querySelectorAll('.hero-indicators button');
-    let currentSlide = 0;
-
-    function goToSlide(index) {
-      slides[currentSlide].classList.remove('active');
-      indicators[currentSlide].classList.remove('active');
-      currentSlide = index;
-      slides[currentSlide].classList.add('active');
-      indicators[currentSlide].classList.add('active');
+    const inds = document.querySelectorAll('.ind');
+    let cur = 0;
+    function goTo(i) {
+      slides[cur].classList.remove('active');
+      inds[cur].classList.remove('active');
+      cur = i;
+      slides[cur].classList.add('active');
+      inds[cur].classList.add('active');
     }
+    let timer = setInterval(() => goTo((cur + 1) % slides.length), 5000);
+    inds.forEach(b => b.addEventListener('click', () => {
+      clearInterval(timer);
+      goTo(parseInt(b.dataset.slide));
+      timer = setInterval(() => goTo((cur + 1) % slides.length), 5000);
+    }));
 
-    // Auto-rotate every 5 seconds
-    let heroTimer = setInterval(() => {
-      goToSlide((currentSlide + 1) % slides.length);
-    }, 5000);
-
-    // Manual indicator clicks
-    indicators.forEach(btn => {
-      btn.addEventListener('click', () => {
-        clearInterval(heroTimer);
-        goToSlide(parseInt(btn.dataset.slide));
-        heroTimer = setInterval(() => {
-          goToSlide((currentSlide + 1) % slides.length);
-        }, 5000);
+    // Scroll reveal
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
       });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
     });
 
-    // ---- Scroll animations (Intersection Observer) ----
-    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -80px 0px' };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.fade-up, .fade-left, .fade-right, .stagger-children').forEach(el => {
-      observer.observe(el);
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
