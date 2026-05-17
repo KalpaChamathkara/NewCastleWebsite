@@ -1108,6 +1108,18 @@ textarea {
   color: var(--gold);
 }
 
+.testimonials-intro {
+  text-align: center;
+  font-family: var(--ff-display);
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
 /* Storyboard track — film-strip inspired */
 .storyboard-track {
   display: grid;
