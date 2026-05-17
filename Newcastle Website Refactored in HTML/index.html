@@ -92,16 +92,17 @@
         </a>
         <a href="#contact" class="btn-ghost">Get in Touch</a>
       </div>
-      <div class="hero-indicators">
-        <button class="ind active" data-slide="0"></button>
-        <button class="ind" data-slide="1"></button>
-        <button class="ind" data-slide="2"></button>
-        <button class="ind" data-slide="3"></button>
-        <button class="ind" data-slide="4"></button>
-        <button class="ind" data-slide="5"></button>
-      </div>
     </div>
 
+    <!-- Vertical slide indicators -->
+    <div class="hero-indicators">
+      <button class="ind active" data-slide="0"></button>
+      <button class="ind" data-slide="1"></button>
+      <button class="ind" data-slide="2"></button>
+      <button class="ind" data-slide="3"></button>
+      <button class="ind" data-slide="4"></button>
+      <button class="ind" data-slide="5"></button>
+    </div>
     <!-- Stat strip -->
     <div class="hero-stats">
       <div class="stat-item">
@@ -246,12 +247,58 @@
           <div class="wc-bar"></div>
         </div>
       </div>
-      <div class="testimonial-strip reveal">
-        <div class="ts-inner">
-          <span class="ts-quote mono">"</span>
-          <p>Our clients are at the heart of everything we do. Real experiences and feedback through our Google Reviews
-            reflect our commitment to excellence and trust.</p>
-          <span class="ts-quote mono">"</span>
+      <!-- Client Testimonials Storyboard -->
+      <div class="testimonials-section reveal">
+        <div class="testimonials-header">
+          <div class="eyebrow mono"><span class="eyebrow-line"></span>WHAT THEY SAY<span class="eyebrow-line"></span></div>
+          <h3 class="testimonials-title">Client <em>Testimonials</em></h3>
+        </div>
+        <div class="storyboard-track">
+          <div class="storyboard-card">
+            <div class="sb-film-hole"></div>
+            <div class="sb-content">
+              <div class="sb-stars">★★★★★</div>
+              <p class="sb-quote">"Newcastle Holdings exceeded all our expectations. Their attention to detail and commitment to quality made our investment journey seamless and rewarding."</p>
+              <div class="sb-author">
+                <div class="sb-avatar">R</div>
+                <div class="sb-info">
+                  <span class="sb-name">Ranjith Perera</span>
+                  <span class="sb-role mono">Property Investor</span>
+                </div>
+              </div>
+            </div>
+            <div class="sb-film-hole"></div>
+          </div>
+          <div class="storyboard-card">
+            <div class="sb-film-hole"></div>
+            <div class="sb-content">
+              <div class="sb-stars">★★★★★</div>
+              <p class="sb-quote">"The interior design team transformed our apartment into a living masterpiece. Every corner reflects elegance and thoughtful craftsmanship."</p>
+              <div class="sb-author">
+                <div class="sb-avatar">S</div>
+                <div class="sb-info">
+                  <span class="sb-name">Samantha De Silva</span>
+                  <span class="sb-role mono">Homeowner</span>
+                </div>
+              </div>
+            </div>
+            <div class="sb-film-hole"></div>
+          </div>
+          <div class="storyboard-card">
+            <div class="sb-film-hole"></div>
+            <div class="sb-content">
+              <div class="sb-stars">★★★★★</div>
+              <p class="sb-quote">"Pro-Smart Digital's marketing strategy doubled our online engagement within months. A truly results-driven partnership we value deeply."</p>
+              <div class="sb-author">
+                <div class="sb-avatar">K</div>
+                <div class="sb-info">
+                  <span class="sb-name">Kavindu Fernando</span>
+                  <span class="sb-role mono">Business Owner</span>
+                </div>
+              </div>
+            </div>
+            <div class="sb-film-hole"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -550,16 +597,25 @@
       menuToggle.classList.remove('active');
     }));
 
-    // Hero carousel
+    // Hero carousel — vertical slide
     const slides = document.querySelectorAll('.hero-slide');
     const inds = document.querySelectorAll('.ind');
     let cur = 0;
     function goTo(i) {
-      slides[cur].classList.remove('active');
-      inds[cur].classList.remove('active');
+      if (i === cur) return;
+      const prev = cur;
+      // Slide old one up and out
+      slides[prev].classList.remove('active');
+      slides[prev].classList.add('slide-out-up');
+      inds[prev].classList.remove('active');
+      // Bring new one in from below
       cur = i;
       slides[cur].classList.add('active');
       inds[cur].classList.add('active');
+      // Clean up after transition
+      setTimeout(() => {
+        slides[prev].classList.remove('slide-out-up');
+      }, 1300);
     }
     let timer = setInterval(() => goTo((cur + 1) % slides.length), 5000);
     inds.forEach(b => b.addEventListener('click', () => {
