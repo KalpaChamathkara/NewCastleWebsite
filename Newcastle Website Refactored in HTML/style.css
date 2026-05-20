@@ -744,6 +744,7 @@ textarea:focus {
 
 .sectors {
   background: var(--surface);
+  color: var(--on-surf);
 }
 
 .sector-block {
@@ -792,9 +793,22 @@ textarea:focus {
 
   font-size: clamp(2.5rem, 4vw, 4rem);
 
-  color: #D4AF37;
+  color: var(--on-surf);
 
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sector-detail {
+  margin-bottom: 2rem;
+}
+
+.sector-detail h4 {
+  font-family: var(--ff-mono);
+  font-size: 1.1rem;
+  color: var(--on-surf);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .sector-detail p {
@@ -802,7 +816,32 @@ textarea:focus {
 
   line-height: 1.8;
 
-  color: #D4AF37;
+  color: var(--on-surf-m);
+}
+
+.sector-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.chip {
+  padding: 0.4rem 1rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  font-family: var(--ff-mono);
+  font-size: 0.8rem;
+  color: var(--on-surf-m);
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.chip:hover {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
 }
 
 /* =============================================
@@ -811,6 +850,23 @@ textarea:focus {
 
 .contact {
   background: var(--surface);
+  color: var(--on-surf);
+}
+
+.contact-intro {
+  color: var(--on-surf-m);
+}
+
+.info-block p,
+.info-block a {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--on-surf);
+  transition: color 0.3s ease;
+}
+
+.info-block a:hover {
+  color: var(--gold-dim);
 }
 
 .contact-grid {
