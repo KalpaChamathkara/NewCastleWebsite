@@ -1708,6 +1708,33 @@ textarea {
 }
 
 /* =============================================
+   PRIVACY STATEMENT
+   =============================================
+*/
+.privacy {
+  background: var(----navy);
+}
+
+.privacy-copy {
+  max-width: 860px;
+  margin: 0 auto;
+  color: var(--on-surf-m);
+  font-size: 1rem;
+  line-height: 1.85;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.privacy-copy a {
+  color: var(--gold);
+  transition: color 0.2s;
+}
+
+.privacy-copy a:hover {
+  color: var(--gold-light);
+}
+
+/* =============================================
    FOOTER
    ============================================= */
 .site-footer {
