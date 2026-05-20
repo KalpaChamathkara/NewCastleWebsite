@@ -398,17 +398,13 @@ textarea:focus {
   z-index: 1;
 
   background:
-    linear-gradient(
-      to right,
+    linear-gradient(to right,
       rgba(6, 18, 53, 0.88) 0%,
       rgba(6, 18, 53, 0.35) 60%,
-      rgba(6, 18, 53, 0.6) 100%
-    ),
-    linear-gradient(
-      to top,
+      rgba(6, 18, 53, 0.6) 100%),
+    linear-gradient(to top,
       var(--navy) 0%,
-      transparent 45%
-    );
+      transparent 45%);
 }
 
 /* =============================================
@@ -490,27 +486,64 @@ textarea:focus {
 
   margin-right: 1rem;
   margin-bottom: 1rem;
+
+  position: relative;
+  border: none;
+  background: transparent;
+  z-index: 1;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
 }
 
-/* REMOVED clip-path FOR EDGE COMPATIBILITY */
-
 .btn-primary {
-  background: var(--gold);
   color: var(--navy);
 }
 
-.btn-primary:hover {
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  z-index: -1;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover::before {
   background: var(--gold-light);
 }
 
 .btn-ghost {
-  border: 1px solid rgba(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 0.85);
 }
 
-.btn-ghost:hover {
-  border-color: var(--gold);
-  color: var(--gold-light);
+.btn-ghost::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.35);
+  /* border color */
+  z-index: -2;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  transition: background 0.3s ease;
+}
+
+.btn-ghost::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  /* border thickness */
+  background: var(--navy);
+  z-index: -1;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  transition: background 0.3s ease;
+}
+
+.btn-ghost:hover::before {
+  background: var(--gold);
+}
+
+.btn-ghost:hover::after {
+  background: rgba(207, 170, 105, 0.1);
 }
 
 /* =============================================
@@ -588,34 +621,66 @@ textarea:focus {
    CARDS
 ============================================= */
 
-.vision-card,
-.quality-card,
-.contact-form-wrap {
-  overflow: hidden;
-
-  border-radius: 8px;
+.vision-card {
+  position: relative;
+  background: transparent;
+  color: var(--white);
+  padding: 2.2rem;
+  z-index: 1;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
 
-/* Removed clip-path for Edge compatibility */
+.vision-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--border-dark);
+  /* subtle gold border */
+  z-index: -2;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
 
-.vision-card {
-  background: var(--navy);
-  color: var(--white);
-
-  padding: 2rem;
+.vision-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--navy-mid);
+  z-index: -1;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
 
 .quality-card {
   background: #ffffff;
-
-  padding: 2rem;
-
+  padding: 2.2rem;
+  border-radius: 8px;
   border: 1px solid var(--border-light);
+  color: var(--navy);
 }
 
-/* Ensure text is readable on white backgrounds */
-.quality-card {
-  color: var(--navy);
+.contact-form-wrap {
+  position: relative;
+  background: transparent;
+  padding: 2.5rem;
+  z-index: 1;
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);
+}
+
+.contact-form-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--gold) 0%, transparent 60%);
+  z-index: -2;
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);
+}
+
+.contact-form-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--navy);
+  z-index: -1;
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);
 }
 
 /* =============================================
@@ -763,11 +828,7 @@ textarea:focus {
   }
 }
 
-.contact-form-wrap {
-  background: var(--navy);
-
-  padding: 2rem;
-}
+/* Styled above with clipped corner polygon */
 
 .form-row {
   display: grid;
@@ -826,23 +887,35 @@ textarea:focus {
 }
 
 .btn-send {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
   width: 100%;
-
   padding: 1rem;
-
-  background: var(--gold);
-
+  background: transparent;
   color: var(--navy);
-
   font-family: var(--ff-mono);
-
   text-transform: uppercase;
   letter-spacing: 0.2em;
+  border: none;
+  z-index: 1;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  transition: all 0.3s ease;
+}
 
+.btn-send::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  z-index: -1;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
   transition: background 0.3s ease;
 }
 
-.btn-send:hover {
+.btn-send:hover::before {
   background: var(--gold-light);
 }
 
@@ -989,19 +1062,279 @@ textarea:focus {
 }
 
 /* =============================================
-   EDGE + CHROME FIXES
-============================================= */
+   EDGE + CHROME FIXES & OVERLAYS
+   ============================================= */
 
-/* Remove unsupported mask-image issues */
+/* Responsive Interactive Grid Overlay */
 .hero-grid-overlay {
-  display: none;
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-image:
+    linear-gradient(rgba(207, 170, 105, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(207, 170, 105, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center;
+  pointer-events: none;
+
+  /* Robust browser support for masks */
+  -webkit-mask-image: radial-gradient(circle at center, black 25%, transparent 80%);
+  mask-image: radial-gradient(circle at center, black 25%, transparent 80%);
 }
 
-/* Backdrop filter fallback */
+/* Subtle Sci-Fi Scanlines Overlay */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.12) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* HUD corner console brackets */
+.hud-corner {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  pointer-events: none;
+  color: var(--gold);
+}
+
+.hud-bl {
+  left: 2rem;
+  bottom: 8rem;
+}
+
+.hud-br {
+  right: 2rem;
+  bottom: 8rem;
+}
+
+.hud-bracket {
+  width: 15px;
+  height: 25px;
+  border: 1px solid var(--gold);
+  opacity: 0.5;
+}
+
+.hud-bl .hud-bracket {
+  border-right: none;
+}
+
+.hud-br .hud-bracket {
+  border-left: none;
+}
+
+.hud-label {
+  font-family: var(--ff-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-light);
+  opacity: 0.85;
+  text-shadow: 0 0 8px rgba(207, 170, 105, 0.35);
+}
+
+@media (max-width: 768px) {
+  .hud-corner {
+    display: none;
+  }
+}
+
+/* Premium Typography Eyebrows */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-family: var(--ff-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.eyebrow-line {
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* Glowing tag elements */
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--ff-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.tag-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--gold);
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+}
+
+/* Retro-Futuristic Testimonials Storyboard Layout */
+.testimonials-section {
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.testimonials-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.storyboard-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.storyboard-card {
+  background: var(--navy-mid);
+  border: 1px solid var(--border-dark);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  padding: 1.8rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: all 0.35s ease;
+}
+
+.storyboard-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 15px 40px rgba(207, 170, 105, 0.12);
+}
+
+.sb-film-hole {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  border-top: 1px dashed rgba(207, 170, 105, 0.25);
+  border-bottom: 1px dashed rgba(207, 170, 105, 0.25);
+  opacity: 0.6;
+  margin: 0 -1.8rem 1.2rem;
+}
+
+.sb-film-hole::before,
+.sb-film-hole::after {
+  content: "▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪ ▪";
+  font-family: monospace;
+  font-size: 8px;
+  color: var(--gold);
+  letter-spacing: 6px;
+  padding: 0 1.2rem;
+}
+
+.sb-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.sb-stars {
+  color: var(--gold);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.sb-quote {
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sb-author {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.sb-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  box-shadow: 0 0 12px rgba(207, 170, 105, 0.3);
+}
+
+.sb-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.sb-name {
+  font-weight: 500;
+  color: var(--white);
+  font-size: 0.95rem;
+}
+
+.sb-role {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Backdrop filter fallbacks & Cross-Browser Tweaks */
 .mobile-menu,
 .hero-stats,
 .scroll-top-btn {
   background-color: rgba(6, 18, 53, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 /* Smooth rendering */
@@ -1011,12 +1344,31 @@ textarea:focus {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Fix broken privacy background variable */
+/* Fix privacy section background */
 .privacy {
-  background: var(--navy);
+  background: var(--navy) !important;
 }
 
-/* Fix flex overflow issues in Edge */
+.privacy-copy {
+  max-width: 860px;
+  margin: 0 auto;
+  color: var(--on-surf-m);
+  font-size: 1.1rem;
+  line-height: 1.85;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.privacy-copy a {
+  color: var(--gold);
+  transition: color 0.2s ease;
+}
+
+.privacy-copy a:hover {
+  color: var(--gold-light);
+}
+
+/* Fix flex overflow issues in Edge & Chrome */
 .nav-links,
 .footer-nav,
 .hero-cta {
