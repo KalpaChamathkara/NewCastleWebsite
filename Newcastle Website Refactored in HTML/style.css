@@ -1599,6 +1599,67 @@ textarea {
   padding-top: 1rem;
 }
 
+/* =============================================
+   RESPONSIVE FIXES & CROSS-BROWSER FALLBACKS
+   - ensure older browsers and IE/Edge get usable fallbacks
+   - mobile padding / size tweaks for small viewports
+============================================= */
+
+/* Fallback for older browsers that don't support svh */
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* Keyboard focus visibility for accessibility */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid rgba(207, 170, 105, 0.22);
+  outline-offset: 2px;
+}
+
+/* Small-screen optimizations */
+@media (max-width: 640px) {
+  .hero-content {
+    padding: 4.5rem 1rem 1.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 9vw, 4.5rem);
+  }
+
+  .hero-sub {
+    max-width: 100%;
+  }
+
+  .hero-indicators {
+    display: none;
+  }
+
+  .nav-inner {
+    padding: 0 1rem;
+  }
+
+  .mobile-menu {
+    padding: 1rem 1.25rem 1.5rem;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    padding: 0.7rem 1.1rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Medium screens: slightly tighten container */
+@media (min-width: 641px) and (max-width: 899px) {
+  .container { padding: 0 1.75rem; }
+  .hero-content { padding-top: 8rem; }
+}
+
+
 .decor-line {
   flex: 1;
   height: 1px;
